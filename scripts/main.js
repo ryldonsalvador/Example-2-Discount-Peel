@@ -50,65 +50,77 @@ document.addEventListener("DOMContentLoaded", function () {
     box.addEventListener("mouseenter", () => {
       // Scale the whole coupon box
       gsap.to(box, {
-        scale: 1.08,
+        y: -3,
+        filter: "drop-shadow(0px 0px 3px rgba(160, 159, 159, 0.6))",
         duration: 0.4,
         ease: "power3.out",
+        z: 0.001,
       });
 
       // Animate only the button inside
       gsap.to(btn, {
         backgroundColor: "#e6f4ff",
-        filter: "drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.6))",
+        filter: "drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.6))",
         duration: 0.4,
         ease: "power3.out",
+        z: 0.001,
       });
     });
 
     // Mouse leave (desktop)
     box.addEventListener("mouseleave", () => {
       gsap.to(box, {
-        scale: 1,
+        y: 0,
         duration: 0.4,
+        filter: "drop-shadow(0px 0px 3px rgba(160, 159, 159, 0))",
         ease: "power3.out",
+        z: 0.001,
       });
 
       gsap.to(btn, {
         backgroundColor: "#cdeaff",
-        filter: "drop-shadow(0px 0px 0px rgba(0, 0, 0, 0))",
+        filter: "drop-shadow(0px 0px 3px rgba(0, 0, 0, 0))",
         duration: 0.4,
         ease: "power3.out",
+        z: 0.001,
       });
     });
 
     // Touch start (mobile)
     box.addEventListener("touchstart", () => {
       gsap.to(box, {
-        scale: 1.08,
+        y: -3,
         duration: 0.4,
         ease: "power3.out",
+        filter: "drop-shadow(0px 0px 3px rgba(160, 159, 159, 0.6))",
+        z: 0.001,
       });
 
       gsap.to(btn, {
         backgroundColor: "#e6f4ff",
-        filter: "drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.6))",
+        filter: "drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.6))",
         duration: 0.4,
         ease: "power3.out",
+        z: 0.001,
       });
     });
 
     // Touch end (mobile)
     box.addEventListener("touchend", () => {
       gsap.to(box, {
-        scale: 1,
+        y: 0,
         duration: 0.4,
+        filter: "drop-shadow(0px 0px 3px rgba(160, 159, 159, 0))",
         ease: "power3.out",
+        z: 0.001,
       });
 
       gsap.to(btn, {
         backgroundColor: "#cdeaff",
-        filter: "drop-shadow(0px 0px 0px rgba(0, 0, 0, 0))",
+        filter: "drop-shadow(0px 0px 3px rgba(0, 0, 0, 0))",
         duration: 0.4,
         ease: "power3.out",
+        z: 0.001,
       });
     });
   });
