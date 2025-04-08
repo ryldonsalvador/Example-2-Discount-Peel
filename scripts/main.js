@@ -108,6 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Touch end (mobile)
     box.addEventListener("touchend", () => {
       gsap.to(box, {
+        delay: 0.3,
         y: 0,
         duration: 0.4,
         filter: "drop-shadow(0px 0px 3px rgba(160, 159, 159, 0))",
@@ -116,6 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       gsap.to(btn, {
+        delay: 0.3,
         backgroundColor: "#cdeaff",
         filter: "drop-shadow(0px 0px 3px rgba(0, 0, 0, 0))",
         duration: 0.4,
