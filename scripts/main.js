@@ -37,8 +37,80 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     } else {
       // alert("Clicked on the coupon container (not on a box)");
-      window.open(window.clickTag2, "_blank");
+      window.open(window.clickTag1, "_blank");
     }
+  });
+
+  const couponBoxes = document.querySelectorAll(".coupon-box");
+
+  couponBoxes.forEach((box) => {
+    const btn = box.querySelector(".btn");
+
+    // Mouse enter (desktop)
+    box.addEventListener("mouseenter", () => {
+      // Scale the whole coupon box
+      gsap.to(box, {
+        scale: 1.08,
+        duration: 0.4,
+        ease: "power3.out",
+      });
+
+      // Animate only the button inside
+      gsap.to(btn, {
+        backgroundColor: "#e6f4ff",
+        filter: "drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.6))",
+        duration: 0.4,
+        ease: "power3.out",
+      });
+    });
+
+    // Mouse leave (desktop)
+    box.addEventListener("mouseleave", () => {
+      gsap.to(box, {
+        scale: 1,
+        duration: 0.4,
+        ease: "power3.out",
+      });
+
+      gsap.to(btn, {
+        backgroundColor: "#cdeaff",
+        filter: "drop-shadow(0px 0px 0px rgba(0, 0, 0, 0))",
+        duration: 0.4,
+        ease: "power3.out",
+      });
+    });
+
+    // Touch start (mobile)
+    box.addEventListener("touchstart", () => {
+      gsap.to(box, {
+        scale: 1.08,
+        duration: 0.4,
+        ease: "power3.out",
+      });
+
+      gsap.to(btn, {
+        backgroundColor: "#e6f4ff",
+        filter: "drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.6))",
+        duration: 0.4,
+        ease: "power3.out",
+      });
+    });
+
+    // Touch end (mobile)
+    box.addEventListener("touchend", () => {
+      gsap.to(box, {
+        scale: 1,
+        duration: 0.4,
+        ease: "power3.out",
+      });
+
+      gsap.to(btn, {
+        backgroundColor: "#cdeaff",
+        filter: "drop-shadow(0px 0px 0px rgba(0, 0, 0, 0))",
+        duration: 0.4,
+        ease: "power3.out",
+      });
+    });
   });
 
   var p = new Peel("#top-left", {
